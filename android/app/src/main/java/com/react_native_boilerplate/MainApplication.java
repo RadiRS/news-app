@@ -1,4 +1,4 @@
-package com.react_native_boilerplate;
+package com.news_app;
 
 import android.app.Application;
 

@@ -1,47 +1,61 @@
 import {
   createStackNavigator,
-  createDrawerNavigator,
-  createSwitchNavigator,
-  createAppContainer
+  createAppContainer,
+  createBottomTabNavigator
 } from 'react-navigation';
 // Components
 // import DrawerNavigator from '../components/drawer/DrawerNavigator';
 // Screens
-import { Welcome, Another } from '../screens';
+import { Home, Book, Search, Notification, Profile } from '../screens';
 
 // Home Stack Navigator
-const AppHomeStackNavigator = createStackNavigator({
-  Welcome,
-  Another
-});
+const HomeStackNavigator = createStackNavigator(
+  {
+    Home
+  },
+  { mode: 'modal' }
+);
+
+// Book Stack Navigator
+const BookStackNavigator = createStackNavigator(
+  {
+    Book
+  },
+  { mode: 'modal' }
+);
+
+// Search Stack Navigator
+const SearchStackNavigator = createStackNavigator(
+  {
+    Search
+  },
+  { mode: 'modal' }
+);
+
+// Notification Stack Navigator
+const NotificationStackNavigator = createStackNavigator(
+  {
+    Notification
+  },
+  { mode: 'modal' }
+);
 
 // Profile Stack Navigator
-// const AppProfileStackNavigator = createStackNavigator({
-//   Profile,
-//   UserProfile,
-//   UpdateProfile
-// });
+const ProfileStackNavigator = createStackNavigator(
+  {
+    Profile
+  },
+  { mode: 'modal' }
+);
 
-// App Drawer Navigator
-// const AppDrawerNavigator = createDrawerNavigator(
-//   {
-//     Home: {
-//       screen: AppHomeStackNavigator
-//     },
-//     Profile: {
-//       screen: AppProfileStackNavigator
-//     }
-//   },
-//   {
-//     drawerPosition: 'left',
-//     drawerType: 'slide',
-//     drawerWidth: 400,
-//     contentComponent: DrawerNavigator,
-//     drawerOpenRoute: 'DrawerOpen',
-//     drawerCloseRoute: 'DrawerClose',
-//     drawerToogleRoute: 'DrawerToggle'
-//   }
-// );
+// Bottom Tab Navigator
+const BottomTabNavigator = createBottomTabNavigator({
+  Home: HomeStackNavigator,
+  Book: BookStackNavigator,
+  Search: SearchStackNavigator,
+  Notification: NotificationStackNavigator,
+  Profile: ProfileStackNavigator
+});
 
 // App Switch Navigator
 // const AppSwitchNavigator = createSwitchNavigator({
@@ -53,6 +67,6 @@ const AppHomeStackNavigator = createStackNavigator({
 // });
 
 // App Container
-const AppContainer = createAppContainer(AppHomeStackNavigator);
+const AppContainer = createAppContainer(BottomTabNavigator);
 
 export default AppContainer;
