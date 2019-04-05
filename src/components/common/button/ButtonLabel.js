@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Text } from 'native-base';
+import { TouchableOpacity, Text } from 'react-native';
 import { Colors } from '../../../themes';
 
 const ButtonLabel = props => {
@@ -11,11 +11,9 @@ const ButtonLabel = props => {
   } = props;
 
   return (
-    <Button style={{ backgroundColor: buttonColor }} {...restprops}>
-      <Text uppercase={false} style={{ fontSize: 20, color: labelColor }}>
-        {label}
-      </Text>
-    </Button>
+    <TouchableOpacity style={{ backgroundColor: buttonColor }} {...restprops}>
+      <Text style={{ fontSize: 20, color: labelColor }}>{label}</Text>
+    </TouchableOpacity>
   );
 };
 
