@@ -29,4 +29,6 @@ export default connect(
 
 const Container = styled.View``;
 
-const Text = styled.Text``;
+const Text = styled.Text`
+  font-family: 'Domine Bold';
+`;
