@@ -1,12 +1,12 @@
-## Boilerplate React Native
+## News App
 
-This is a boilerplate for react native project which is include some configuration
+This is a simple mobile app for search and read articles. In this app using public API from http://developer.nytimes.com/.
 
 ### Tech :
 
 - React Native
 - Redux
-- Redux Thunk
+- Redux Promise Middleware
 - React Navigation
-- Native Base
+- Styled Components
 - Axios
