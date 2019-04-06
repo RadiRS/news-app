@@ -9,12 +9,12 @@ import {
   StatusBar
 } from 'react-native';
 import styled from 'styled-components';
-import Icon from 'react-native-vector-icons/Ionicons';
 
 // Actions
 import { toggleMenu, getUser } from '../stores/actions';
 
 // Components
+import Icon from '../components/common/icon';
 // import Card from '../components/common/card';
 import UserMenu from '../components/user';
 // import Course from '../components/course';
@@ -112,7 +112,6 @@ class HomeScreen extends Component {
                 <Name>{user.name}</Name>
                 <Icon
                   name="ios-notifications"
-                  size={24}
                   style={{
                     position: 'absolute',
                     right: 20,
