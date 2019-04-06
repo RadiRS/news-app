@@ -14,9 +14,9 @@ import styled from 'styled-components';
 import { toggleMenu, getUser } from '../stores/actions';
 
 // Components
-import { UserMenuLoader } from '../components/loader/Loader';
+import { UserMenuLoader } from '../components/loader';
 import Icon from '../components/common/icon';
-// import Card from '../components/common/card';
+import Populer from '../components/news/populer';
 import UserMenu from '../components/user';
 // import Course from '../components/course';
 import Section from '../components/section';
@@ -150,22 +150,32 @@ class HomeScreen extends Component {
                 showsHorizontalScrollIndicator={false}
                 contentContainerStyle={{ paddingHorizontal: 10 }}
               >
-                {/* {cards.map((card, index) => (
-                  <TouchableOpacity
-                    key={index}
-                    onPress={() =>
-                      navigation.navigate('Section', { section: card })
-                    }
-                  >
-                    <Card
-                      title={card.title}
-                      image={card.image}
-                      logo={card.logo}
-                      caption={card.caption}
-                      subTitle={card.subTitle}
-                    />
-                  </TouchableOpacity>
-                ))} */}
+                {/* {cards.map((card, index) => ( */}
+                <TouchableOpacity>
+                  <Populer
+                    image="http://lorempixel.com/640/480"
+                    title="Tes"
+                    byline="Aabbdul"
+                    date="14 Jan"
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity>
+                  <Populer
+                    image="http://lorempixel.com/640/480"
+                    title="Tes"
+                    byline="Aabbdul"
+                    date="14 Jan"
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity>
+                  <Populer
+                    image="http://lorempixel.com/640/480"
+                    title="Tes"
+                    byline="Aabbdul"
+                    date="14 Jan"
+                  />
+                </TouchableOpacity>
+                {/* ))} */}
               </ScrollView>
 
               <SubTitle>News</SubTitle>
