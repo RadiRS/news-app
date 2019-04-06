@@ -154,7 +154,7 @@ class HomeScreen extends Component {
                 <TouchableOpacity>
                   <Populer
                     image="http://lorempixel.com/640/480"
-                    title="Tes"
+                    title="Lkdkd kdsalfa dkd"
                     byline="Aabbdul"
                     date="14 Jan"
                   />
