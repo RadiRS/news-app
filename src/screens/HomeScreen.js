@@ -136,7 +136,7 @@ class HomeScreen extends Component {
                 ))}
               </ScrollView>
 
-              <SubTitle>Continue Learning</SubTitle>
+              <SubTitle>Most Populer</SubTitle>
 
               <ScrollView
                 horizontal

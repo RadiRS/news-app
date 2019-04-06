@@ -1,12 +1,17 @@
+import React from 'react';
 import {
   createStackNavigator,
   createAppContainer,
   createBottomTabNavigator
 } from 'react-navigation';
 // Components
-// import DrawerNavigator from '../components/drawer/DrawerNavigator';
+import Icon from '../components/common/icon';
 // Screens
 import { Home, Book, Search, Notification, Profile } from '../screens';
+
+// Colors
+const activeColor = '#4775f2';
+const inactiveColor = '#b8bece';
 
 // Home Stack Navigator
 const HomeStackNavigator = createStackNavigator(
@@ -16,6 +21,27 @@ const HomeStackNavigator = createStackNavigator(
   { mode: 'modal' }
 );
 
+HomeStackNavigator.navigationOptions = ({ navigation }) => {
+  let tabBarVisible = true;
+
+  const routeName = navigation.state.routes[navigation.state.index].routeName;
+
+  if (routeName === 'NewsSection') {
+    tabBarVisible = false;
+  }
+
+  return {
+    tabBarVisible,
+    tabBarIcon: ({ focused }) => (
+      <Icon
+        name="ios-home"
+        size={26}
+        color={focused ? activeColor : inactiveColor}
+      />
+    )
+  };
+};
+
 // Book Stack Navigator
 const BookStackNavigator = createStackNavigator(
   {
@@ -23,6 +49,16 @@ const BookStackNavigator = createStackNavigator(
   },
   { mode: 'modal' }
 );
+
+BookStackNavigator.navigationOptions = {
+  tabBarIcon: ({ focused }) => (
+    <Icon
+      name="ios-book"
+      size={26}
+      color={focused ? activeColor : inactiveColor}
+    />
+  )
+};
 
 // Search Stack Navigator
 const SearchStackNavigator = createStackNavigator(
@@ -32,6 +68,16 @@ const SearchStackNavigator = createStackNavigator(
   { mode: 'modal' }
 );
 
+SearchStackNavigator.navigationOptions = {
+  tabBarIcon: ({ focused }) => (
+    <Icon
+      name="ios-search"
+      size={26}
+      color={focused ? activeColor : inactiveColor}
+    />
+  )
+};
+
 // Notification Stack Navigator
 const NotificationStackNavigator = createStackNavigator(
   {
@@ -39,6 +85,16 @@ const NotificationStackNavigator = createStackNavigator(
   },
   { mode: 'modal' }
 );
+
+NotificationStackNavigator.navigationOptions = {
+  tabBarIcon: ({ focused }) => (
+    <Icon
+      name="ios-notifications"
+      size={26}
+      color={focused ? activeColor : inactiveColor}
+    />
+  )
+};
 
 // Profile Stack Navigator
 const ProfileStackNavigator = createStackNavigator(
@@ -48,6 +104,16 @@ const ProfileStackNavigator = createStackNavigator(
   { mode: 'modal' }
 );
 
+ProfileStackNavigator.navigationOptions = {
+  tabBarIcon: ({ focused }) => (
+    <Icon
+      name="ios-person"
+      size={26}
+      color={focused ? activeColor : inactiveColor}
+    />
+  )
+};
+
 // Bottom Tab Navigator
 const BottomTabNavigator = createBottomTabNavigator({
   Home: HomeStackNavigator,
@@ -56,15 +122,6 @@ const BottomTabNavigator = createBottomTabNavigator({
   Notification: NotificationStackNavigator,
   Profile: ProfileStackNavigator
 });
-
-// App Switch Navigator
-// const AppSwitchNavigator = createSwitchNavigator({
-//   Splash,
-//   AuthMethod,
-//   Signin,
-//   Signup,
-//   AppDrawerNavigator
-// });
 
 // App Container
 const AppContainer = createAppContainer(BottomTabNavigator);
