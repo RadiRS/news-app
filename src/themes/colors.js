@@ -11,6 +11,7 @@ const colors = {
   facebook: '#3b5998',
   transparent: 'rgba(0,0,0,0)',
   silver: '#F7F7F7',
+  darkGray: '#b8bece',
   steel: '#CCCCCC',
   error: 'rgba(200, 0, 0, 0.8)',
   ricePaper: 'rgba(255,255,255, 0.75)',

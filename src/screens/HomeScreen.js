@@ -14,6 +14,7 @@ import styled from 'styled-components';
 import { toggleMenu, getUser } from '../stores/actions';
 
 // Components
+import { UserMenuLoader } from '../components/loader/Loader';
 import Icon from '../components/common/icon';
 // import Card from '../components/common/card';
 import UserMenu from '../components/user';
@@ -82,7 +83,7 @@ class HomeScreen extends Component {
   };
 
   render() {
-    const { user } = this.props;
+    const { user, userLoading } = this.props;
 
     return (
       <RootView>
@@ -96,29 +97,35 @@ class HomeScreen extends Component {
         >
           <SafeAreaView>
             <ScrollView showsVerticalScrollIndicator={false}>
-              <TitleBar>
-                <TouchableOpacity
-                  onPress={this.props.toggleMenu}
-                  style={{
-                    marginLeft: 20,
-                    position: 'absolute',
-                    top: 0,
-                    left: 0
-                  }}
-                >
-                  <Avatar photo={user.photo} />
-                </TouchableOpacity>
-                <Title>Welcome back,</Title>
-                <Name>{user.name}</Name>
-                <Icon
-                  name="ios-notifications"
-                  style={{
-                    position: 'absolute',
-                    right: 20,
-                    top: 5
-                  }}
-                />
-              </TitleBar>
+              {userLoading ? (
+                <UserLoaderWrapper>
+                  <UserMenuLoader />
+                </UserLoaderWrapper>
+              ) : (
+                <TitleBar>
+                  <TouchableOpacity
+                    onPress={this.props.toggleMenu}
+                    style={{
+                      marginLeft: 20,
+                      position: 'absolute',
+                      top: 0,
+                      left: 0
+                    }}
+                  >
+                    <Avatar photo={user.photo} />
+                  </TouchableOpacity>
+                  <Title>Welcome back,</Title>
+                  <Name>{user.name}</Name>
+                  <Icon
+                    name="ios-notifications"
+                    style={{
+                      position: 'absolute',
+                      right: 20,
+                      top: 5
+                    }}
+                  />
+                </TitleBar>
+              )}
 
               <ScrollView
                 horizontal
@@ -161,7 +168,13 @@ class HomeScreen extends Component {
                 ))} */}
               </ScrollView>
 
-              <SubTitle>Populer Course</SubTitle>
+              <SubTitle>News</SubTitle>
+
+              <SubTitle>Opinion</SubTitle>
+
+              <SubTitle>Arts</SubTitle>
+
+              <SubTitle>Living</SubTitle>
 
               {/* {courses.map((course, index) => (
                 <Course
@@ -185,7 +198,8 @@ class HomeScreen extends Component {
 
 const mapStateToProps = ({ menu, user }) => ({
   menu,
-  user: user.user
+  user: user.user,
+  userLoading: user.isLoading
 });
 
 const mapDispatchToProps = {
@@ -209,6 +223,12 @@ const Container = styled.View`
   overflow: hidden;
 `;
 
+const UserLoaderWrapper = styled.View`
+  margin-top: 20px;
+  margin-left: 20px;
+  height: 10.5%;
+`;
+
 const AnimatedContainer = Animated.createAnimatedComponent(Container);
 
 const TitleBar = styled.View`
@@ -218,7 +238,7 @@ const TitleBar = styled.View`
 `;
 
 const SubTitle = styled.Text`
-  color: #b8bece;
+  color: ${Colors.darkGray};
   font-weight: ${Fonts.weight.large};
   font-size: 15px;
   margin-left: 20px;
@@ -227,7 +247,7 @@ const SubTitle = styled.Text`
 
 const Title = styled.Text`
   font-size: ${Fonts.size.regular};
-  color: #b8bece;
+  color: ${Colors.darkGray};
   font-weight: ${Fonts.weight.reguler};
 `;
 
