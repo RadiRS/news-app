@@ -1,18 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Fonts, Images } from '../../../themes';
+import { formatTime } from '../../../helpers';
 
 const Populer = props => {
-  const { multimedia, title, byline, date } = props.article;
+  const { multimedia, title, byline, published_date } = props.article;
 
-  // const renderImage = () => (
-  //   multimedia.length ? (
-  //     <Image source={{ uri: multimedia[3].url }} />
-  //   ) : null
-  // );
   return (
     <Container>
-      {/* <Cover>{renderImage}</Cover> */}
       <Cover>
         {multimedia.length ? (
           <Image source={{ uri: multimedia[3].url }} />
@@ -23,7 +18,7 @@ const Populer = props => {
       <Content>
         <Title numberOfLines={2}>{title}</Title>
         <Author>{byline}</Author>
-        <Date>{date}</Date>
+        <Date>{formatTime(published_date)}</Date>
       </Content>
     </Container>
   );
@@ -34,7 +29,7 @@ export default Populer;
 const Container = styled.View`
   background: white;
   width: 390px;
-  height: 330px;
+  height: 350px;
   border-radius: 14px;
   margin: 10px 10px 20px 10px;
   elevation: 10;

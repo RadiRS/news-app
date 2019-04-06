@@ -171,19 +171,6 @@ class HomeScreen extends Component {
                   <SubTitle>Arts</SubTitle>
 
                   <SubTitle>Living</SubTitle>
-
-                  {/* {courses.map((course, index) => (
-                <Course
-                  key={index}
-                  image={course.image}
-                  logo={course.logo}
-                  subTitle={course.subtitle}
-                  title={course.title}
-                  avatar={course.avatar}
-                  caption={course.caption}
-                  author={course.author}
-                />
-              ))} */}
                 </>
               )}
             </ScrollView>
