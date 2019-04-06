@@ -11,12 +11,19 @@ import {
 import styled from 'styled-components';
 
 // Actions
-import { toggleMenu, getUser, getArticles } from '../stores/actions';
+import {
+  toggleMenu,
+  getUser,
+  getArticles,
+  getArticlesNews
+} from '../stores/actions';
 
 // Components
 import { UserMenuLoader, NewsLoader } from '../components/loader';
+import FlatList from '../components/flastlist';
 import Icon from '../components/common/icon';
-import Populer from '../components/news/populer';
+import Populer from '../components/article/populer';
+import ArticleSection from '../components/article/section';
 import UserMenu from '../components/user';
 // import Course from '../components/course';
 import Section from '../components/section';
@@ -37,7 +44,8 @@ class HomeScreen extends Component {
   componentDidMount() {
     StatusBar.setBackgroundColor(Colors.silver, true);
     StatusBar.setBarStyle('dark-content');
-    this.props.getArticles('home');
+
+    this.props.getArticles();
     this.props.getUser();
   }
 
@@ -83,8 +91,44 @@ class HomeScreen extends Component {
     }
   };
 
+  renderItemPopulerArticle = ({ item }) => (
+    <TouchableOpacity>
+      <Populer article={item} />
+    </TouchableOpacity>
+  );
+
+  renderItemSectionArticle = ({ item }) => (
+    <TouchableOpacity>
+      <ArticleSection article={item} />
+    </TouchableOpacity>
+  );
+
+  renderPopulerArticle = data => (
+    <FlatList
+      data={data}
+      renderItem={this.renderItemPopulerArticle}
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      contentContainerStyle={{ paddingHorizontal: 10 }}
+    />
+  );
+
+  renderSectionArticle = data => (
+    <FlatList
+      data={data}
+      renderItem={this.renderItemSectionArticle}
+      showsHorizontalScrollIndicator={false}
+      contentContainerStyle={{ paddingVertical: 10 }}
+    />
+  );
+
   render() {
     const { user, userLoading, articles, articleLoading } = this.props;
+
+    const NewsSection = articles.filter(item => item.section === 'World');
+    const OpinionSection = articles.filter(item => item.section === 'Opinion');
+    const ArtsSection = articles.filter(item => item.section === 'Arts');
+    const LivingSection = articles.filter(item => item.section === 'Health');
 
     return (
       <RootView>
@@ -131,6 +175,7 @@ class HomeScreen extends Component {
               {articleLoading ? (
                 <ArticleLoaderWrapper>
                   <NewsLoader />
+                  <NewsLoader />
                 </ArticleLoaderWrapper>
               ) : (
                 <>
@@ -151,26 +196,19 @@ class HomeScreen extends Component {
                   </ScrollView>
 
                   <SubTitle>Most Populer</SubTitle>
-
-                  <ScrollView
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                    contentContainerStyle={{ paddingHorizontal: 10 }}
-                  >
-                    {articles.map((article, index) => (
-                      <TouchableOpacity key={index}>
-                        <Populer article={article} />
-                      </TouchableOpacity>
-                    ))}
-                  </ScrollView>
+                  {this.renderPopulerArticle(articles)}
 
                   <SubTitle>News</SubTitle>
+                  {this.renderSectionArticle(NewsSection)}
 
                   <SubTitle>Opinion</SubTitle>
+                  {this.renderSectionArticle(OpinionSection)}
 
                   <SubTitle>Arts</SubTitle>
+                  {this.renderSectionArticle(ArtsSection)}
 
                   <SubTitle>Living</SubTitle>
+                  {this.renderSectionArticle(LivingSection)}
                 </>
               )}
             </ScrollView>
@@ -192,7 +230,8 @@ const mapStateToProps = ({ menu, user, article }) => ({
 const mapDispatchToProps = {
   toggleMenu,
   getUser,
-  getArticles
+  getArticles,
+  getArticlesNews
 };
 
 export default connect(
@@ -234,7 +273,7 @@ const TitleBar = styled.View`
 const SubTitle = styled.Text`
   color: ${Colors.darkGray};
   font-weight: ${Fonts.weight.large};
-  font-size: 15px;
+  font-size: 24px;
   margin-left: 20px;
   margin-top: 10px;
 `;

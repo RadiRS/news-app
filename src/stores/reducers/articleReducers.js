@@ -1,12 +1,14 @@
 import {
   GET_ARTICLES_PENDING,
   GET_ARTICLES_FULFILLED,
-  GET_ARTICLES_REJECTED
+  GET_ARTICLES_NEWS_PENDING,
+  GET_ARTICLES_NEWS_FULFILLED
 } from '../actions/types';
 
 const initialState = {
   article: {},
   articles: [],
+  articlesNews: [],
   isLoading: false
 };
 
@@ -25,9 +27,16 @@ export default (state = initialState, { type, payload }) => {
         isLoading: false
       };
 
-    case GET_ARTICLES_REJECTED:
+    case GET_ARTICLES_NEWS_PENDING:
       return {
         ...initialState,
+        isLoading: true
+      };
+
+    case GET_ARTICLES_NEWS_FULFILLED:
+      return {
+        ...initialState,
+        articlesNews: payload,
         isLoading: false
       };
 
