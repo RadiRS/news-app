@@ -11,10 +11,10 @@ import {
 import styled from 'styled-components';
 
 // Actions
-import { toggleMenu, getUser } from '../stores/actions';
+import { toggleMenu, getUser, getArticles } from '../stores/actions';
 
 // Components
-import { UserMenuLoader } from '../components/loader';
+import { UserMenuLoader, NewsLoader } from '../components/loader';
 import Icon from '../components/common/icon';
 import Populer from '../components/news/populer';
 import UserMenu from '../components/user';
@@ -37,6 +37,7 @@ class HomeScreen extends Component {
   componentDidMount() {
     StatusBar.setBackgroundColor(Colors.silver, true);
     StatusBar.setBarStyle('dark-content');
+    this.props.getArticles('home');
     this.props.getUser();
   }
 
@@ -83,7 +84,7 @@ class HomeScreen extends Component {
   };
 
   render() {
-    const { user, userLoading } = this.props;
+    const { user, userLoading, articles, articleLoading } = this.props;
 
     return (
       <RootView>
@@ -127,66 +128,51 @@ class HomeScreen extends Component {
                 </TitleBar>
               )}
 
-              <ScrollView
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                contentContainerStyle={{
-                  flexDirection: 'row',
-                  padding: 20,
-                  paddingLeft: 12,
-                  paddingRight: 12,
-                  paddingTop: 30
-                }}
-              >
-                {sections.map((section, index) => (
-                  <Section key={index} text={section.text} />
-                ))}
-              </ScrollView>
+              {articleLoading ? (
+                <ArticleLoaderWrapper>
+                  <NewsLoader />
+                </ArticleLoaderWrapper>
+              ) : (
+                <>
+                  <ScrollView
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    contentContainerStyle={{
+                      flexDirection: 'row',
+                      padding: 20,
+                      paddingLeft: 12,
+                      paddingRight: 12,
+                      paddingTop: 30
+                    }}
+                  >
+                    {sections.slice(0, 10).map((section, index) => (
+                      <Section key={index} text={section.text} />
+                    ))}
+                  </ScrollView>
 
-              <SubTitle>Most Populer</SubTitle>
+                  <SubTitle>Most Populer</SubTitle>
 
-              <ScrollView
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                contentContainerStyle={{ paddingHorizontal: 10 }}
-              >
-                {/* {cards.map((card, index) => ( */}
-                <TouchableOpacity>
-                  <Populer
-                    image="http://lorempixel.com/640/480"
-                    title="Lkdkd kdsalfa dkd"
-                    byline="Aabbdul"
-                    date="14 Jan"
-                  />
-                </TouchableOpacity>
-                <TouchableOpacity>
-                  <Populer
-                    image="http://lorempixel.com/640/480"
-                    title="Tes"
-                    byline="Aabbdul"
-                    date="14 Jan"
-                  />
-                </TouchableOpacity>
-                <TouchableOpacity>
-                  <Populer
-                    image="http://lorempixel.com/640/480"
-                    title="Tes"
-                    byline="Aabbdul"
-                    date="14 Jan"
-                  />
-                </TouchableOpacity>
-                {/* ))} */}
-              </ScrollView>
+                  <ScrollView
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    contentContainerStyle={{ paddingHorizontal: 10 }}
+                  >
+                    {articles.map((article, index) => (
+                      <TouchableOpacity key={index}>
+                        <Populer article={article} />
+                      </TouchableOpacity>
+                    ))}
+                  </ScrollView>
 
-              <SubTitle>News</SubTitle>
+                  <SubTitle>News</SubTitle>
 
-              <SubTitle>Opinion</SubTitle>
+                  <SubTitle>Opinion</SubTitle>
 
-              <SubTitle>Arts</SubTitle>
+                  <SubTitle>Arts</SubTitle>
 
-              <SubTitle>Living</SubTitle>
+                  <SubTitle>Living</SubTitle>
 
-              {/* {courses.map((course, index) => (
+                  {/* {courses.map((course, index) => (
                 <Course
                   key={index}
                   image={course.image}
@@ -198,6 +184,8 @@ class HomeScreen extends Component {
                   author={course.author}
                 />
               ))} */}
+                </>
+              )}
             </ScrollView>
           </SafeAreaView>
         </AnimatedContainer>
@@ -206,15 +194,18 @@ class HomeScreen extends Component {
   }
 }
 
-const mapStateToProps = ({ menu, user }) => ({
+const mapStateToProps = ({ menu, user, article }) => ({
   menu,
   user: user.user,
-  userLoading: user.isLoading
+  userLoading: user.isLoading,
+  articles: article.articles,
+  articleLoading: article.isLoading
 });
 
 const mapDispatchToProps = {
   toggleMenu,
-  getUser
+  getUser,
+  getArticles
 };
 
 export default connect(
@@ -234,6 +225,12 @@ const Container = styled.View`
 `;
 
 const UserLoaderWrapper = styled.View`
+  margin-top: 20px;
+  margin-left: 20px;
+  height: 10.5%;
+`;
+
+const ArticleLoaderWrapper = styled.View`
   margin-top: 20px;
   margin-left: 20px;
   height: 10.5%;

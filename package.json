@@ -28,6 +28,7 @@
     "react-redux": "6.0.1",
     "redux": "4.0.1",
     "redux-promise-middleware": "6.1.0",
+    "redux-thunk": "^2.3.0",
     "rn-content-loader": "0.0.4",
     "styled-components": "4.2.0"
   },

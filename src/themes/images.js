@@ -5,6 +5,7 @@
 // leave off @2x/@3x
 const images = {
   // logo: require('../Images/ir.png'),
+  noImage: 'http://lorempixel.com/640/480'
 };
 
 export default images;
