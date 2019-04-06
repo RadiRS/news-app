@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-// import ButtonLabel from '../components/common/button/ButtonLabel';
-// import NavigationServices from '../navigator/NavigationServices';
 
 class ProfileScreen extends Component {
   static navigationOptions = () => ({

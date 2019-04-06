@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-// import ButtonLabel from '../components/common/button/ButtonLabel';
-// import NavigationServices from '../navigator/NavigationServices';
+import { Fonts } from '../themes';
 
 class BookScreen extends Component {
   static navigationOptions = () => ({
@@ -30,5 +29,5 @@ export default connect(
 const Container = styled.View``;
 
 const Text = styled.Text`
-  font-family: 'Domine Bold';
+  font-family: ${Fonts.type.bold};
 `;

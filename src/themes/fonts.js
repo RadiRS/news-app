@@ -1,6 +1,6 @@
 const type = {
-  // base: 'Avenir-Book',
-  // bold: 'Avenir-Black',
+  base: 'Domine Reguler',
+  bold: 'Domine Bold'
   // emphasis: 'HelveticaNeue-Italic'
 };
 
@@ -16,6 +16,11 @@ const size = {
   medium: 14,
   small: 12,
   tiny: 8.5
+};
+
+const weight = {
+  large: 600,
+  reguler: 500
 };
 
 const style = {
@@ -55,6 +60,7 @@ const style = {
 
 export default {
   type,
+  weight,
   size,
   style
 };
