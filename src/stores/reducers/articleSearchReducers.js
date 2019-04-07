@@ -1,23 +1,25 @@
-import { GET_ARTICLES_PENDING, GET_ARTICLES_FULFILLED } from '../actions/types';
+import {
+  SEARCH_ARTICLES_PENDING,
+  SEARCH_ARTICLES_FULFILLED
+} from '../actions/types';
 
 const initialState = {
-  article: {},
-  articles: [],
+  searchResults: [],
   isLoading: false
 };
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
-    case GET_ARTICLES_PENDING:
+    case SEARCH_ARTICLES_PENDING:
       return {
         ...initialState,
         isLoading: true
       };
 
-    case GET_ARTICLES_FULFILLED:
+    case SEARCH_ARTICLES_FULFILLED:
       return {
         ...initialState,
-        articles: payload,
+        searchResults: payload,
         isLoading: false
       };
 

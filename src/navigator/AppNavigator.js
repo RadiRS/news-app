@@ -64,19 +64,30 @@ BookStackNavigator.navigationOptions = {
 // Search Stack Navigator
 const SearchStackNavigator = createStackNavigator(
   {
-    Search
+    Search,
+    Article
   },
   { mode: 'modal' }
 );
 
-SearchStackNavigator.navigationOptions = {
-  tabBarIcon: ({ focused }) => (
-    <Icon
-      name="ios-search"
-      size={26}
-      color={focused ? activeColor : inactiveColor}
-    />
-  )
+SearchStackNavigator.navigationOptions = ({ navigation }) => {
+  let tabBarVisible = true;
+
+  const routeName = navigation.state.routes[navigation.state.index].routeName;
+
+  if (routeName === 'Article') {
+    tabBarVisible = false;
+  }
+  return {
+    tabBarVisible,
+    tabBarIcon: ({ focused }) => (
+      <Icon
+        name="ios-search"
+        size={26}
+        color={focused ? activeColor : inactiveColor}
+      />
+    )
+  };
 };
 
 // Notification Stack Navigator

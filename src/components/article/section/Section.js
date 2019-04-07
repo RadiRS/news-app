@@ -4,7 +4,37 @@ import { Images, Fonts } from '../../../themes';
 import { formatTime } from '../../../helpers';
 
 const Section = props => {
-  const { multimedia, title, byline, published_date } = props.article;
+  const { searchResult } = props;
+  const {
+    multimedia = [],
+    title,
+    byline = {},
+    published_date,
+    headline,
+    pub_date
+  } = props.article;
+
+  if (searchResult) {
+    return (
+      <Container>
+        <Content>
+          <Title numberOfLines={2}>{headline.main}</Title>
+          <Author>{byline.original}</Author>
+          <Date>{formatTime(pub_date)}</Date>
+        </Content>
+        <Cover>
+          {multimedia.length > 1 ? (
+            <Image
+              source={{ uri: `https://static01.nyt.com/${multimedia[3].url}` }}
+            />
+          ) : (
+            <Image source={{ uri: Images.noImage }} />
+          )}
+        </Cover>
+      </Container>
+    );
+  }
+
   return (
     <Container>
       <Content>
@@ -21,6 +51,23 @@ const Section = props => {
       </Cover>
     </Container>
   );
+
+  // return (
+  //   <Container>
+  //     <Content>
+  //       <Title numberOfLines={2}>{title}</Title>
+  //       <Author>{byline}</Author>
+  //       <Date>{formatTime(published_date)}</Date>
+  //     </Content>
+  //     <Cover>
+  //       {multimedia.length ? (
+  //         <Image source={{ uri: multimedia[3].url }} />
+  //       ) : (
+  //         <Image source={{ uri: Images.noImage }} />
+  //       )}
+  //     </Cover>
+  //   </Container>
+  // );
 };
 
 export default Section;

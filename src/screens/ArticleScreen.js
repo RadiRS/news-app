@@ -1,16 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { ScrollView, Dimensions } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { connect } from 'react-redux';
-import HTML from 'react-native-render-html';
-
-const htmlContent = `
-  <h1>This HTML snippet is now rendered with native components !</h1>
-  <h2>Enjoy a webview-free and blazing fast application</h2>
-  <img src="https://i.imgur.com/dHLmxfO.jpg?2" />
-  <em style="textAlign: center;">Look at how happy this native cat is</em>
-`;
 
 export class ArticleScreen extends Component {
   handleWebViewNavigationStateChange = newNavState => {
@@ -65,6 +56,7 @@ export class ArticleScreen extends Component {
     setTimeout(() => {
       this.webref.injectJavaScript(run);
     }, 3000);
+
     return (
       <Container>
         <WebView
@@ -93,10 +85,10 @@ const Container = styled.View`
   flex: 1;
 `;
 
-const Content = styled.View`
-  height: 100%;
-  width: 100%;
-  background-color: blue;
-`;
+// const Content = styled.View`
+//   height: 100%;
+//   width: 100%;
+//   background-color: blue;
+// `;
 
-const Text = styled.Text``;
+// const Text = styled.Text``;

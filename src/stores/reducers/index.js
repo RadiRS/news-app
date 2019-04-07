@@ -3,10 +3,12 @@ import error from './errorReducers';
 import menu from './menuReducers';
 import user from './userReducers';
 import article from './articleReducers';
+import articleSearch from './articleSearchReducers';
 
 export default combineReducers({
   error,
   menu,
   user,
-  article
+  article,
+  articleSearch
 });

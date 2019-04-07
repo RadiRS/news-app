@@ -11,12 +11,7 @@ import {
 import styled from 'styled-components';
 
 // Actions
-import {
-  toggleMenu,
-  getUser,
-  getArticles,
-  getArticlesNews
-} from '../stores/actions';
+import { toggleMenu, getUser, getArticles } from '../stores/actions';
 
 // Components
 import { UserMenuLoader, NewsLoader } from '../components/loader';
@@ -25,7 +20,6 @@ import Icon from '../components/common/icon';
 import Populer from '../components/article/populer';
 import ArticleSection from '../components/article/section';
 import UserMenu from '../components/user';
-// import Course from '../components/course';
 import Section from '../components/section';
 import Avatar from '../components/avatar';
 import { Colors, Fonts } from '../themes';
@@ -234,8 +228,7 @@ const mapStateToProps = ({ menu, user, article }) => ({
 const mapDispatchToProps = {
   toggleMenu,
   getUser,
-  getArticles,
-  getArticlesNews
+  getArticles
 };
 
 export default connect(
