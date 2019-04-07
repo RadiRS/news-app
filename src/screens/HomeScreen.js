@@ -92,13 +92,13 @@ class HomeScreen extends Component {
   };
 
   renderItemPopulerArticle = ({ item }) => (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => this.handlePressArticle(item)}>
       <Populer article={item} />
     </TouchableOpacity>
   );
 
   renderItemSectionArticle = ({ item }) => (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => this.handlePressArticle(item)}>
       <ArticleSection article={item} />
     </TouchableOpacity>
   );
@@ -121,6 +121,10 @@ class HomeScreen extends Component {
       contentContainerStyle={{ paddingVertical: 10 }}
     />
   );
+
+  handlePressArticle = item => {
+    this.props.navigation.navigate('Article', { url: item.url });
+  };
 
   render() {
     const { user, userLoading, articles, articleLoading } = this.props;
@@ -273,7 +277,7 @@ const TitleBar = styled.View`
 const SubTitle = styled.Text`
   color: ${Colors.darkGray};
   font-weight: ${Fonts.weight.large};
-  font-size: 24px;
+  font-size: 20px;
   margin-left: 20px;
   margin-top: 10px;
 `;

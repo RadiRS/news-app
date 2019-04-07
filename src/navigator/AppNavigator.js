@@ -7,7 +7,7 @@ import {
 // Components
 import Icon from '../components/common/icon';
 // Screens
-import { Home, Book, Search, Notification, Profile } from '../screens';
+import { Home, Book, Search, Notification, Profile, Article } from '../screens';
 
 // Colors
 const activeColor = '#4775f2';
@@ -16,7 +16,8 @@ const inactiveColor = '#b8bece';
 // Home Stack Navigator
 const HomeStackNavigator = createStackNavigator(
   {
-    Home
+    Home,
+    Article
   },
   { mode: 'modal' }
 );
@@ -26,7 +27,7 @@ HomeStackNavigator.navigationOptions = ({ navigation }) => {
 
   const routeName = navigation.state.routes[navigation.state.index].routeName;
 
-  if (routeName === 'NewsSection') {
+  if (routeName === 'Article') {
     tabBarVisible = false;
   }
 
