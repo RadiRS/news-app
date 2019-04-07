@@ -3,6 +3,7 @@ import error from './errorReducers';
 import menu from './menuReducers';
 import user from './userReducers';
 import article from './articleReducers';
+import book from './bookReducers';
 import articleSearch from './articleSearchReducers';
 
 export default combineReducers({
@@ -10,5 +11,6 @@ export default combineReducers({
   menu,
   user,
   article,
+  book,
   articleSearch
 });

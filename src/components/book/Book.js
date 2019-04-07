@@ -1,50 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Images, Fonts } from '../../../themes';
-import { formatTime } from '../../../helpers';
+import { Images, Fonts } from '../../themes';
+import { formatTime } from '../../helpers';
 
-const Section = props => {
-  const { searchResult } = props;
-  const {
-    multimedia = [],
-    title,
-    byline = {},
-    published_date,
-    headline,
-    pub_date
-  } = props.article;
-
-  if (searchResult) {
-    return (
-      <Container>
-        <Content>
-          <Title numberOfLines={2}>{headline.main}</Title>
-          <Author>{byline.original}</Author>
-          <Date>{formatTime(pub_date)}</Date>
-        </Content>
-        <Cover>
-          {multimedia.length > 1 ? (
-            <Image
-              source={{ uri: `https://static01.nyt.com/${multimedia[3].url}` }}
-            />
-          ) : (
-            <Image source={{ uri: Images.noImage }} />
-          )}
-        </Cover>
-      </Container>
-    );
-  }
+const Book = props => {
+  const { multimedia = [], book_details, published_date } = props.book;
 
   return (
     <Container>
       <Content>
-        <Title numberOfLines={2}>{title}</Title>
-        <Author>{byline}</Author>
+        <Title numberOfLines={2}>{book_details[0].title}</Title>
+        <Author>{book_details[0].contributor}</Author>
         <Date>{formatTime(published_date)}</Date>
       </Content>
       <Cover>
-        {multimedia.length ? (
-          <Image source={{ uri: multimedia[3].url }} />
+        {multimedia.length > 1 ? (
+          <Image
+            source={{ uri: `https://static01.nyt.com/${multimedia[3].url}` }}
+          />
         ) : (
           <Image source={{ uri: Images.noImage }} />
         )}
@@ -53,10 +26,9 @@ const Section = props => {
   );
 };
 
-export default Section;
+export default Book;
 
 const Container = styled.View`
-  flex: 1;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;

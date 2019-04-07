@@ -5,15 +5,12 @@ import Icon from '../icon';
 import { Colors } from '../../../themes';
 
 const SearchBox = props => {
-  const { onPress, onChangeText } = props;
+  const { onPress, onChangeText, placeholder, disabled } = props;
   return (
     <KeyboardAvoidingView>
       <Container>
-        <TextInput
-          onChangeText={onChangeText}
-          placeholder="Search articles..."
-        />
-        <Button onPress={onPress}>
+        <TextInput onChangeText={onChangeText} placeholder={placeholder} />
+        <Button onPress={onPress} disabled={disabled}>
           <Icon name="ios-search" />
         </Button>
       </Container>
@@ -24,12 +21,13 @@ const SearchBox = props => {
 export default SearchBox;
 
 const Container = styled.View`
+  elevation: 2px;
   flex-direction: row;
   height: 60px;
   border-width: 2px;
   border-color: ${Colors.cloud};
   border-radius: 14px;
-  margin: 10px;
+  margin: 10px 20px;
   padding: 5px;
   align-items: center;
   /* justify-content: center; */

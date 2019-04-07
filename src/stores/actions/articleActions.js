@@ -32,7 +32,6 @@ export const searchArticles = (query, sort = 'newest') => dispatch => {
       `${API_HOST}/search/v2/articlesearch.json?q=${query}&sort=${sort}&api-key=${API_KEY}`
     )
     .then(res => {
-      console.warn(res.data.response.docs);
       dispatch({
         type: SEARCH_ARTICLES_FULFILLED,
         payload: res.data.response.docs

@@ -7,13 +7,13 @@ import { connect } from 'react-redux';
 import { searchArticles } from '../stores/actions';
 
 // Components
-import { NewsLoader } from '../components/loader';
-import FlatList from '../components/flastlist';
-import SearchBox from '../components/common/searchbox';
-import Article from '../components/article/section';
+import { NewsLoader } from '../components/loader/Loader';
+import FlatList from '../components/flastlist/FlatList';
+import SearchBox from '../components/common/searchbox/SearchBox';
+import Article from '../components/article/section/Section';
 import { Colors } from '../themes';
 
-class SearchScreen extends Component {
+class SearchArticleScreen extends Component {
   static navigationOptions = () => ({
     header: null
   });
@@ -99,6 +99,7 @@ class SearchScreen extends Component {
     return (
       <Container>
         <SearchBox
+          placeholder="Search articles..."
           value={query}
           onChangeText={this.handleTextChange}
           onPress={this.handlePressSearch}
@@ -122,11 +123,11 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SearchScreen);
+)(SearchArticleScreen);
 
 const Container = styled.View`
   flex: 1;
-  padding: 10px;
+  /* padding: 10px; */
   background-color: ${Colors.silver};
 `;
 
@@ -144,11 +145,6 @@ const Wrapper = styled.View`
 const SortOptions = styled.Text`
   font-size: 18px;
   color: white;
-`;
-
-const Content = styled.View`
-  /* align-items: center; */
-  /* justify-content: center; */
 `;
 
 const Text = styled.Text`

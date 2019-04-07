@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "axios": "0.18.0",
+    "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "react": "16.6.3",
     "react-content-loader": "4.2.1",

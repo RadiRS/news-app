@@ -7,7 +7,14 @@ import {
 // Components
 import Icon from '../components/common/icon';
 // Screens
-import { Home, Book, Search, Notification, Profile, Article } from '../screens';
+import {
+  Home,
+  Book,
+  SearchArticle,
+  Notification,
+  Profile,
+  Article
+} from '../screens';
 
 // Colors
 const activeColor = '#4775f2';
@@ -46,31 +53,13 @@ HomeStackNavigator.navigationOptions = ({ navigation }) => {
 // Book Stack Navigator
 const BookStackNavigator = createStackNavigator(
   {
-    Book
-  },
-  { mode: 'modal' }
-);
-
-BookStackNavigator.navigationOptions = {
-  tabBarIcon: ({ focused }) => (
-    <Icon
-      name="ios-book"
-      size={26}
-      color={focused ? activeColor : inactiveColor}
-    />
-  )
-};
-
-// Search Stack Navigator
-const SearchStackNavigator = createStackNavigator(
-  {
-    Search,
+    Book,
     Article
   },
   { mode: 'modal' }
 );
 
-SearchStackNavigator.navigationOptions = ({ navigation }) => {
+BookStackNavigator.navigationOptions = ({ navigation }) => {
   let tabBarVisible = true;
 
   const routeName = navigation.state.routes[navigation.state.index].routeName;
@@ -78,6 +67,37 @@ SearchStackNavigator.navigationOptions = ({ navigation }) => {
   if (routeName === 'Article') {
     tabBarVisible = false;
   }
+
+  return {
+    tabBarVisible,
+    tabBarIcon: ({ focused }) => (
+      <Icon
+        name="ios-book"
+        size={26}
+        color={focused ? activeColor : inactiveColor}
+      />
+    )
+  };
+};
+
+// Search Article Stack Navigator
+const SearchArticleStackNavigator = createStackNavigator(
+  {
+    SearchArticle,
+    Article
+  },
+  { mode: 'modal' }
+);
+
+SearchArticleStackNavigator.navigationOptions = ({ navigation }) => {
+  let tabBarVisible = true;
+
+  const routeName = navigation.state.routes[navigation.state.index].routeName;
+
+  if (routeName === 'Article') {
+    tabBarVisible = false;
+  }
+
   return {
     tabBarVisible,
     tabBarIcon: ({ focused }) => (
@@ -130,7 +150,7 @@ ProfileStackNavigator.navigationOptions = {
 const BottomTabNavigator = createBottomTabNavigator({
   Home: HomeStackNavigator,
   Book: BookStackNavigator,
-  Search: SearchStackNavigator,
+  Search: SearchArticleStackNavigator,
   Notification: NotificationStackNavigator,
   Profile: ProfileStackNavigator
 });
