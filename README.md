@@ -1,6 +1,6 @@
 # News Mobile App
 
-This is a simple mobile app for search and read articles. In this app using public API from http://developer.nytimes.com/.
+This is a simple mobile app for search and read articles. In this app using public API from http://developer.nytimes.com/ and https://uinames.com/.
 
 ## Getting Started
 
@@ -43,6 +43,18 @@ Run the project via command line
 npm run android   //android
 npm run ios       //ios
 ```
+
+### Demo
+
+<div align="center">
+  <img src="docs/01.gif"/>
+  <img src="docs/02.gif"/>
+</div>
+&nbsp;
+<div align="center">
+  <img src="docs/03.gif"/>
+  <img src="docs/04.gif"/>
+</div>
 
 ## Running the tests
 
