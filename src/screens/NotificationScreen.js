@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { connect } from 'react-redux';
+
+// Components
+import Icon from '../components/common/icon';
+import { Colors, Fonts } from '../themes';
 
 class NotificationScreen extends Component {
   static navigationOptions = () => ({
@@ -10,21 +13,23 @@ class NotificationScreen extends Component {
   render() {
     return (
       <Container>
-        <Text>Notification Screen</Text>
+        <Icon name="ios-notifications" color={Colors.darkGray} />
+        <Text>Dont have any notifications</Text>
       </Container>
     );
   }
 }
 
-const mapStateToProps = () => ({});
+export default NotificationScreen;
 
-const mapDispatchToProps = {};
+const Container = styled.View`
+  flex: 1;
+  background-color: ${Colors.silver};
+  justify-content: center;
+  align-items: center;
+`;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(NotificationScreen);
-
-const Container = styled.View``;
-
-const Text = styled.Text``;
+const Text = styled.Text`
+  font-size: 24px;
+  font-family: ${Fonts.type.bold};
+`;
