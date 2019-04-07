@@ -85,11 +85,13 @@ const Image = styled.Image`
 `;
 
 const Title = styled.Text`
+  font-family: ${Fonts.type.bold};
   font-size: 22px;
   font-weight: bold;
 `;
 
 const Author = styled.Text`
+  font-family: ${Fonts.type.bold};
   color: #b8bece;
   font-size: 15px;
   font-weight: ${Fonts.weight.large};

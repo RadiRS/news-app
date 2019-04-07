@@ -268,6 +268,7 @@ const TitleBar = styled.View`
 `;
 
 const SubTitle = styled.Text`
+  font-family: ${Fonts.type.bold};
   color: ${Colors.darkGray};
   font-weight: ${Fonts.weight.large};
   font-size: 20px;
@@ -276,6 +277,7 @@ const SubTitle = styled.Text`
 `;
 
 const Title = styled.Text`
+  font-family: ${Fonts.type.bold};
   font-size: ${Fonts.size.regular};
   color: ${Colors.darkGray};
   font-weight: ${Fonts.weight.reguler};
