@@ -130,11 +130,6 @@ export default connect(
 
 const menus = [
   {
-    icon: 'ios-settings',
-    title: 'Account',
-    text: 'settings'
-  },
-  {
     icon: 'ios-exit',
     title: 'Log out',
     text: 'See you soon!'
