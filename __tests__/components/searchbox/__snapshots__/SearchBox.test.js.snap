@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders SearchBox component correctly 1`] = `
+<View
+  onLayout={[Function]}
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderColor": "rgba(200,200,200, 0.35)",
+          "borderRadius": 14,
+          "borderWidth": 2,
+          "elevation": 2,
+          "flexDirection": "row",
+          "height": 60,
+          "marginBottom": 10,
+          "marginLeft": 20,
+          "marginRight": 20,
+          "marginTop": 10,
+          "paddingBottom": 5,
+          "paddingLeft": 5,
+          "paddingRight": 5,
+          "paddingTop": 5,
+        },
+      ]
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder=""
+      style={
+        Array [
+          Object {
+            "backgroundColor": "white",
+            "borderRadius": 14,
+            "flexBasis": 0,
+            "flexGrow": 0.9,
+            "flexShrink": 1,
+            "fontSize": 18,
+          },
+        ]
+      }
+      underlineColorAndroid="transparent"
+    />
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "flexBasis": 0,
+          "flexGrow": 0.1,
+          "flexShrink": 1,
+          "justifyContent": "center",
+          "opacity": 1,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Array [
+            Object {
+              "color": "#546bfb",
+              "fontSize": 24,
+            },
+            Array [
+              undefined,
+            ],
+            Object {
+              "fontFamily": "Ionicons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+</View>
+`;
