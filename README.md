@@ -85,6 +85,7 @@ npm run build-android
 - [Redux Promise Middleware](https://github.com/pburtchaell/redux-promise-middleware)
 - [Styled Components](https://www.styled-components.com/)
 - [Axios](https://github.com/axios/axios)
+- [Jest](https://jestjs.io)
 
 ## Authors
 
