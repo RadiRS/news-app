@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Avatar component correctly 1`] = `
+<Image
+  source={
+    Object {
+      "uri": "http://lorempixel.com/640/480",
+    }
+  }
+  style={
+    Array [
+      Object {
+        "backgroundColor": "black",
+        "borderRadius": 22,
+        "height": 44,
+        "width": 44,
+      },
+    ]
+  }
+/>
+`;

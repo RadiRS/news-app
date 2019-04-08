@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Book component correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "white",
+        "borderRadius": 14,
+        "elevation": 10,
+        "flexDirection": "row",
+        "height": 150,
+        "justifyContent": "space-between",
+        "marginBottom": 10,
+        "marginLeft": 20,
+        "marginRight": 20,
+        "marginTop": 10,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 0.7,
+          "flexShrink": 1,
+          "paddingLeft": 10,
+        },
+      ]
+    }
+  >
+    <Text
+      numberOfLines={2}
+      style={
+        Array [
+          Object {
+            "fontSize": 22,
+            "fontWeight": "bold",
+          },
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#b8bece",
+            "fontSize": 15,
+            "fontWeight": "600",
+            "marginTop": 2,
+          },
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#b8bece",
+            "fontSize": 15,
+            "fontWeight": "600",
+            "marginTop": 2,
+          },
+        ]
+      }
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexBasis": 0,
+          "flexGrow": 0.3,
+          "flexShrink": 1,
+          "justifyContent": "center",
+        },
+      ]
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "http://lorempixel.com/640/480",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "borderRadius": 14,
+            "height": 100,
+            "width": 100,
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;

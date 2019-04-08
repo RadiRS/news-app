@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 
 const Avatar = props => <Image source={{ uri: props.photo }} />;
 
