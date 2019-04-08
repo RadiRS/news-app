@@ -1,0 +1,209 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders UserMenu component correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "white",
+        "borderRadius": 10,
+        "height": "100%",
+        "overflow": "hidden",
+        "position": "absolute",
+        "width": "100%",
+        "zIndex": 100,
+      },
+      Object {
+        "top": 1333.8537492906403,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#546bfb",
+          "height": 142,
+          "justifyContent": "center",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "white",
+            "fontSize": 24,
+            "fontWeight": "600",
+          },
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "rgba(255, 255, 255, 0.5)",
+            "fontSize": 13,
+            "marginTop": 8,
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "white",
+        "borderRadius": 22,
+        "elevation": 15,
+        "height": 44,
+        "justifyContent": "center",
+        "left": "50%",
+        "marginLeft": -22,
+        "opacity": 1,
+        "position": "absolute",
+        "top": 120,
+        "width": 44,
+        "zIndex": 1,
+      }
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      style={
+        Array [
+          Object {
+            "color": "#546bfb",
+            "fontSize": 44,
+          },
+          undefined,
+          Object {
+            "fontFamily": "Ionicons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {},
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#f0f3f5",
+          "height": 1334,
+          "paddingBottom": 50,
+          "paddingLeft": 50,
+          "paddingRight": 50,
+          "paddingTop": 50,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "flexDirection": "row",
+            "marginBottom": 15,
+            "marginLeft": 0,
+            "marginRight": 0,
+            "marginTop": 15,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "height": 32,
+              "justifyContent": "center",
+              "width": 32,
+            },
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#546bfb",
+                "fontSize": 24,
+              },
+              undefined,
+              Object {
+                "fontFamily": "Ionicons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "paddingLeft": 20,
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#3c4560",
+                "fontSize": 24,
+                "fontWeight": "600",
+              },
+            ]
+          }
+        >
+          Log out
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#3c4560",
+                "fontWeight": "600",
+                "marginTop": 5,
+                "opacity": 0.6,
+              },
+            ]
+          }
+        >
+          See you soon!
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

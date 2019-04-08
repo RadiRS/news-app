@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 import { Animated } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 

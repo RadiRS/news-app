@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders UserMenuItem component correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+        "marginBottom": 15,
+        "marginLeft": 0,
+        "marginRight": 0,
+        "marginTop": 15,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "height": 32,
+          "justifyContent": "center",
+          "width": 32,
+        },
+      ]
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      style={
+        Array [
+          Object {
+            "color": "#546bfb",
+            "fontSize": 24,
+          },
+          undefined,
+          Object {
+            "fontFamily": "Ionicons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {},
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingLeft": 20,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#3c4560",
+            "fontSize": 24,
+            "fontWeight": "600",
+          },
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#3c4560",
+            "fontWeight": "600",
+            "marginTop": 5,
+            "opacity": 0.6,
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;

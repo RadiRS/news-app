@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Section component correctly 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "white",
+      "borderRadius": 10,
+      "elevation": 5,
+      "flexDirection": "row",
+      "height": 60,
+      "marginBottom": 8,
+      "marginLeft": 8,
+      "marginRight": 8,
+      "marginTop": 8,
+      "opacity": 1,
+      "paddingBottom": 12,
+      "paddingLeft": 12,
+      "paddingRight": 12,
+      "paddingTop": 12,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontFamily": "Domine Bold",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+      ]
+    }
+  >
+    
+  </Text>
+</View>
+`;
