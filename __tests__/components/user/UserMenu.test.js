@@ -15,5 +15,5 @@ const user = {
 };
 
 const menu = {
-  openMenu: true
+  openMenu: false
 };

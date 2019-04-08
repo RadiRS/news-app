@@ -14,7 +14,7 @@ exports[`renders UserMenu component correctly 1`] = `
         "zIndex": 100,
       },
       Object {
-        "top": 1333.8537492906403,
+        "top": 1334,
       },
     ]
   }
