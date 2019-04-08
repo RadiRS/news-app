@@ -41,7 +41,9 @@
     "babel-jest": "24.1.0",
     "eslint-config-handlebarlabs": "0.0.3",
     "jest": "24.1.0",
+    "jest-styled-components": "^6.3.1",
     "metro-react-native-babel-preset": "0.52.0",
+    "react-dom": "^16.6.3",
     "react-test-renderer": "16.6.3",
     "remote-redux-devtools": "0.5.16"
   },
